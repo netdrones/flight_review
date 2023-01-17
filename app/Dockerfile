@@ -1,5 +1,7 @@
 FROM ubuntu:focal
 
+LABEL org.opencontainers.image.source https://github.com/netdrones/flight_review
+
 COPY requirements.txt requirements.txt
 
 RUN apt-get	update && \
@@ -18,6 +20,6 @@ EXPOSE 5006
 CMD ["/opt/service/run.sh"]
 
 ## USAGE
-## ## ## ## ## ## ## ## ## ## ## ## 
+## ## ## ## ## ## ## ## ## ## ## ##
 ## BUILD  docker build -t px4flightreview -f docker/Dockerfile .
 ## RUN    docker run -d -p 5006:5006 -v /<full_path>/config_user.ini:/opt/service/config_user.ini px4flightreview
