@@ -10,7 +10,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: netdrones/px4_flight_review
+  IMAGE_NAME: netdrones/px4-flight-review
   TAG: latest
 
 jobs:
