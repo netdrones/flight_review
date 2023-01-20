@@ -2,13 +2,14 @@ version: "3.3"
 services:
   flight_review_app:
     # image: px4flightreview
-    build:
-      context: ./app
-      dockerfile: Dockerfile
+    image: ghcr.io/netdrones/px4-flight-review:latest
+    # build:
+    #   context: ./app
+    #   dockerfile: Dockerfile
     env_file: .env
     volumes:
       - ./data:/opt/data
-      - ${PWD}/app/config_default.ini:/opt/service/config_default.ini:ro # Absolute for volume a file.
+      - /Users/deonblaauw/Github/flight_review/app/config_default.ini:/opt/service/config_default.ini:ro # Absolute for volume a file.
     restart: always
   nginx:
     build:
